@@ -1,2 +1,13 @@
 <!DOCTYPE html>
-<p>Este es el componente Generaciones</p>
+<div class="container text-center">
+	<h1>Generaciones de Pokemon:</h1>
+	<hr />
+	<div>
+		Listado de todas las generaciones:
+		<ul>
+			<div *ngFor="let unaGeneracion of generaciones; index as i; first as f; last as l">
+				<li>{{unaGeneracion}}</li>
+			</div>
+		</ul>
+	</div>
+</div>
