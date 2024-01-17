@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<div class="container text-center">
+<div class="container content">
 	<h1>Generaciones de Pokemon:</h1>
 	<hr />
 	<div>
 		Listado de todas las generaciones:
 		<ul>
-			<div *ngFor="let unaGeneracion of generaciones; index as i; first as f; last as l">
+			<div *ngFor="let unaGeneracion of generaciones">
 				<li>{{unaGeneracion}}</li>
 			</div>
 		</ul>
