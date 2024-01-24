@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<div class="container content">
-	<h1 class="has-background-black has-text-white">Generaciones de Pokemon:</h1>
+<div class="container content is-family-monospace py-5">
+	<h1>Generaciones de Pokemon:</h1>
 	<hr />
 	<div>
-		<h4 class="has-text-warning-dark">Listado de todas las generaciones:</h4>
+		<h4>Listado de todas las generaciones:</h4>
 		<ul>
 			<div *ngFor="let unaGeneracion of generaciones">
-				<li class="my-4 is-size-5 is-family-monospace has-text-danger-dark">{{unaGeneracion}}</li>
+				<li class="my-4 is-size-5">{{unaGeneracion}}</li>
 			</div>
 		</ul>
 	</div>

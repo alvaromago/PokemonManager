@@ -1,2 +1,71 @@
 <!DOCTYPE html>
-<p>Este es el componente Pokemons</p>
+<div class="container content is-family-monospace py-5">
+	<p>Los Pokemons que tenemos en el array:</p>
+	<p>En el orden del array:</p>
+	<div>
+		<div class="columns">
+			<div class="column is-4">
+				<img src="../../../assets/imgPokemons/1.png" />
+				<p>
+					Nombre: {{Pokemons[0].nombre}}<br />
+					Categoría: {{Pokemons[0].categoria}}<br />
+					Tipo: {{Pokemons[0].tipo}}<br />
+					Talla: {{formatearNumero(Pokemons[0].talla / 100)}} m<br />
+					Peso: {{formatearNumero(Pokemons[0].peso / 1000)}} Kg
+				</p>
+			</div>
+			<div class="column is-4">
+				<img src="../../../assets/imgPokemons/2.png" />
+				<p>
+					Nombre: {{Pokemons[1].nombre}}<br />
+					Categoría: {{Pokemons[1].categoria}}<br />
+					Tipo: {{Pokemons[1].tipo}}<br />
+					Talla: {{formatearNumero(Pokemons[1].talla / 100)}} m<br />
+					Peso: {{formatearNumero(Pokemons[1].peso / 1000)}} Kg
+				</p>
+			</div>
+			<div class="column is-4">
+				<img src="../../../assets/imgPokemons/3.png" />
+				<p>
+					Nombre: {{Pokemons[2].nombre}}<br />
+					Categoría: {{Pokemons[2].categoria}}<br />
+					Tipo: {{Pokemons[2].tipo}}<br />
+					Talla: {{formatearNumero(Pokemons[2].talla / 100)}} m<br />
+					Peso: {{formatearNumero(Pokemons[2].peso / 1000)}} Kg
+				</p>
+			</div>
+		</div>
+		<div class="columns">
+			<div class="column is-4">
+				<img src="../../../assets/imgPokemons/4.png" />
+				<p>
+					Nombre: {{Pokemons[3].nombre}}<br />
+					Categoría: {{Pokemons[3].categoria}}<br />
+					Tipo: {{Pokemons[3].tipo}}<br />
+					Talla: {{formatearNumero(Pokemons[3].talla / 100)}} m<br />
+					Peso: {{formatearNumero(Pokemons[3].peso / 1000)}} Kg
+				</p>
+			</div>
+			<div class="column is-4">
+				<img src="../../../assets/imgPokemons/5.png" />
+				<p>
+					Nombre: {{Pokemons[4].nombre}}<br />
+					Categoría: {{Pokemons[4].categoria}}<br />
+					Tipo: {{Pokemons[4].tipo}}<br />
+					Talla: {{formatearNumero(Pokemons[4].talla / 100)}} m<br />
+					Peso: {{formatearNumero(Pokemons[4].peso / 1000)}} Kg
+				</p>
+			</div>
+			<div class="column is-4">
+				<img src="../../../assets/imgPokemons/6.png" />
+				<p>
+					Nombre: {{Pokemons[5].nombre}}<br />
+					Categoría: {{Pokemons[5].categoria}}<br />
+					Tipo: {{Pokemons[5].tipo}}<br />
+					Talla: {{formatearNumero(Pokemons[5].talla / 100)}} m<br />
+					Peso: {{formatearNumero(Pokemons[5].peso / 1000)}} Kg
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
