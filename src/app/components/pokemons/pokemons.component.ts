@@ -10,7 +10,7 @@ export class PokemonsComponent implements OnInit {
     constructor() { }
 
     pokemons = [
-        { id: 1, nombre: 'Bulbasaur', categoria: 'Grano', tipo: 'Planta/Veneno', talla: 0, peso: 6900, img: './assets/imgPokemons/1.png' },
+        { id: 1, nombre: 'Bulbasaur', categoria: 'Grano', tipo: 'Planta/Veneno', talla: 70, peso: 6900, img: './assets/imgPokemons/1.png' },
         { id: 2, nombre: 'Ivysaur', categoria: 'Grano', tipo: 'Planta/Veneno', talla: 100, peso: 13000, img: "./assets/imgPokemons/2.png" },
         { id: 3, nombre: 'Venusaur', categoria: 'Grano', tipo: 'Planta/Veneno', talla: 200, peso: 100000, img: "./assets/imgPokemons/3.png" },
         { id: 4, nombre: 'Charmander', categoria: 'Lagarto', tipo: 'Fuego', talla: 60, peso: 8500, img: "./assets/imgPokemons/4.png" },
