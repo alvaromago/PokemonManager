@@ -18,6 +18,8 @@ export class PokemonsComponent implements OnInit {
         { id: 6, nombre: 'Charizard', categoria: 'Llama', tipo: 'Fuego/Volador', talla: 170, peso: 90500, img: "./assets/imgPokemons/6.png" }
     ];
 
+    pokemonSeleccionado = '';
+
     formatearNumero(num: number): string {
         const numFormateado = num.toLocaleString('es-ES', { minimumFractionDigits: 0, maximumFractionDigits: 2 });
         return numFormateado.endsWith('.00') ? numFormateado.slice(0, -3) : numFormateado;

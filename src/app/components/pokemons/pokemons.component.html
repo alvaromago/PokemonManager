@@ -1,22 +1,18 @@
 <!DOCTYPE html>
-<div class="container content is-family-monospace py-5">
-	<p>Los Pokémon que tenemos en el array:</p>
-	<p>En el orden del array:</p>
-	<div class="columns is-multiline">
-		<div class="column is-4" *ngFor="let pokemon of pokemons">
-			<ul>
-				<img src="{{pokemon.img}}" />
-				<li>Nombre: {{pokemon.nombre}}</li>
-				<li>Categoría: {{pokemon.categoria}}</li>
-				<li>Tipo: {{pokemon.tipo}}</li>
-				<li>
-					Talla: <span *ngIf="pokemon.talla; else na">{{formatearNumero(pokemon.talla / 100)}} m</span>
-				</li>
-				<li>
-					Peso: <span *ngIf="pokemon.peso; else na">{{formatearNumero(pokemon.peso / 1000)}} Kg</span>
-				</li>
-				<ng-template #na>N/A</ng-template>
-			</ul>
+<div class="container is-family-monospace">
+	<h2>Los Pokemons que tenemos en el array:</h2>
+	<hr />
+	<div class="columns">
+		<div class="column">
+			<p>En el orden del array:</p>
+			<p *ngIf="pokemonSeleccionado">El Pokémon seleccionado es: {{pokemonSeleccionado }}</p>
 		</div>
+	</div>
+	<div class="columns is-multiline">
+		<ul class="menu-list column is-one-third" *ngFor="let pokemon of pokemons">
+			<li>
+				<app-pokemon [pokemon]="pokemon" (eventoClicImagen)="pokemonSeleccionado =$event"></app-pokemon>
+			</li>
+		</ul>
 	</div>
 </div>
