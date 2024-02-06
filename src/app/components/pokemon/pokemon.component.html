@@ -9,10 +9,10 @@
 		Tipo: <span *ngIf="pokemon.tipo; else na">{{pokemon.tipo}}</span>
 	</li>
 	<li>
-		Talla: <span *ngIf="pokemon.talla; else na">{{pokemon.talla | number:'1.0-2' : 'es'}} m</span>
+		Talla: <span *ngIf="pokemon.talla; else na">{{formatearNumero(pokemon.talla / 100)}} m</span>
 	</li>
 	<li>
-		Peso: <span *ngIf="pokemon.peso; else na">{{pokemon.peso | number:'1.0-2' : 'es'}} Kg</span>
+		Peso: <span *ngIf="pokemon.peso; else na">{{formatearNumero(pokemon.peso / 100)}} Kg</span>
 	</li>
 	<ng-template #na>N/A</ng-template>
 </ul>
