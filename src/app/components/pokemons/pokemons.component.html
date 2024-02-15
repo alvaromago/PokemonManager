@@ -5,13 +5,34 @@
 	<div class="columns">
 		<div class="column">
 			<p>En el orden del array:</p>
-			<p *ngIf="pokemonSeleccionado">El Pokémon seleccionado es: {{pokemonSeleccionado }}</p>
+			<p>{{ cuenta }} Pokémons en el array</p>
+			<p *ngIf="pokemonSeleccionado">El Pokémon seleccionado es: {{ pokemonSeleccionado }}</p>
 		</div>
 	</div>
+	<form>
+		<div class="field has-addons">
+			<div class="control has-icons-left">
+				<input
+					class="input is-small"
+					name=" pokemonBuscador"
+					type="test"
+					placeholder="Nombre del pokemon"
+					[(ngModel)]="formBuscarPokemon.nombre"
+					(keyup)="buscar(formBuscarPokemon.nombre)"
+				/>
+			</div>
+			<div class="control">
+				<a class="button is-primary is-small" (click)="buscar(formBuscarPokemon.nombre)"> Buscar </a>
+			</div>
+			<div class="control">
+				<a class="button is-light is-small" (click)="cancelarBuscar()"> Cancelar </a>
+			</div>
+		</div>
+	</form>
 	<div class="columns is-multiline">
 		<ul class="menu-list column is-one-third" *ngFor="let pokemon of pokemons">
 			<li>
-				<app-pokemon [pokemon]="pokemon" (eventoClicImagen)="pokemonSeleccionado =$event"></app-pokemon>
+				<app-pokemon [pokemon]="pokemon" (eventoClicImagen)="pokemonSeleccionado = $event"></app-pokemon>
 			</li>
 		</ul>
 	</div>

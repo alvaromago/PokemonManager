@@ -1,22 +1,42 @@
 import { Component, OnInit } from '@angular/core';
+import { PokemonsService } from 'src/app/services/pokemons.service';
+import { FormBuscarPokemon } from 'src/app/models/form-buscar-pokemon';
 
 @Component({
     selector: 'app-pokemons',
     templateUrl: './pokemons.component.html',
-    styleUrls: ['./pokemons.component.css']
+    styleUrls: ['./pokemons.component.css'],
 })
 export class PokemonsComponent implements OnInit {
-    ngOnInit(): void { }
-    constructor() { }
+    pokemonSeleccionado = '';
 
     pokemons = [
-        { id: 1, nombre: 'Bulbasaur', categoria: 'Grano', tipo: 'Planta/Veneno', talla: 70, peso: 6900, img: './assets/imgPokemons/1.png' },
-        { id: 2, nombre: 'Ivysaur', categoria: 'Grano', tipo: 'Planta/Veneno', talla: 100, peso: 13000, img: "./assets/imgPokemons/2.png" },
-        { id: 3, nombre: 'Venusaur', categoria: 'Grano', tipo: 'Planta/Veneno', talla: 200, peso: 100000, img: "./assets/imgPokemons/3.png" },
-        { id: 4, nombre: 'Charmander', categoria: 'Lagarto', tipo: 'Fuego', talla: 60, peso: 8500, img: "./assets/imgPokemons/4.png" },
-        { id: 5, nombre: 'Charmeleon', categoria: 'Llama', tipo: 'Fuego', talla: 110, peso: 19000, img: "./assets/imgPokemons/5.png" },
-        { id: 6, nombre: 'Charizard', categoria: 'Llama', tipo: 'Fuego/Volador', talla: 170, peso: 90500, img: "./assets/imgPokemons/6.png" }
+        {
+            id: 0,
+            nombre: '',
+            img: '',
+            categoria: '',
+            tipo: ['', ''],
+            talla: 0,
+            peso: 0,
+        },
     ];
 
-    pokemonSeleccionado = '';
+    cuenta = 0;
+    formBuscarPokemon = new FormBuscarPokemon('');
+
+    constructor(private servicePokemons: PokemonsService) { }
+    ngOnInit() {
+        this.pokemons = this.servicePokemons.getPokemons();
+        this.cuenta = this.servicePokemons.contarPokemons();
+    }
+
+    buscar(nombreDelPokemon: string) {
+        this.pokemons = this.servicePokemons.buscarPokemon(nombreDelPokemon);
+    }
+
+    cancelarBuscar() {
+        this.pokemons = this.servicePokemons.getPokemons();
+        this.formBuscarPokemon.setNombre('');
+    }
 }
